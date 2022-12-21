@@ -5,7 +5,7 @@ class student
 {   
 	int rollno;
 	char name[50];
-	int phy, che, math, eng, cse;
+	int p, c, math, eco, cse;
 	int total;
 	double per;
 	char grade;
@@ -21,7 +21,7 @@ public:
 
 void student::calculate()
 {
-	total=phy+che+math+eng+cse;
+	total=p+c+math+eco+cse;
 	per=(total)/5.0;
 	if(per>=90)
 		grade='A';
@@ -45,13 +45,13 @@ void student::getdata()
 	cin.ignore();
 	cin.getline(name,50);
 	cout<<"\nEnter The marks in python out of 100 : ";
-	cin>>phy;
+	cin>>p;
 	cout<<"\nEnter The marks in cpp out of 100 : ";
-	cin>>che;
+	cin>>c;
 	cout<<"\nEnter The marks in maths out of 100 : ";
 	cin>>math;
 	cout<<"\nEnter The marks in economics out of 100 : ";
-	cin>>eng;
+	cin>>eco;
 	cout<<"\nEnter The marks in DAA out of 100 : ";
 	cin>>cse;
 	calculate();
@@ -61,10 +61,10 @@ void student::showdata() const
 {
 	cout<<"\nRoll number of student : "<<rollno;
 	cout<<"\nName of student : "<<name;
-	cout<<"\nMarks in Python : "<<phy;
-	cout<<"\nMarks in Cpp : "<<che;
+	cout<<"\nMarks in Python : "<<p;
+	cout<<"\nMarks in Cpp : "<<c;
 	cout<<"\nMarks in Maths : "<<math;
-	cout<<"\nMarks in Economics : "<<eng;
+	cout<<"\nMarks in Economics : "<<eco;
 	cout<<"\nMarks in DAA :"<<cse;
 	cout<<"\nPercentage of the student is  :"<<per;
 	cout<<"\nGrade of student is :"<<grade;
@@ -72,8 +72,8 @@ void student::showdata() const
 
 void student::show_tabular() const
 {
-	cout<<rollno<<setw(6)<<" "<<name<<setw(10)<<phy<<setw(4)<<che<<setw(4)<<math<<setw(4)
-		<<eng<<setw(4)<<cse<<setw(4)<<total<<setw(8)<<per<<setw(6)<<grade<<endl;
+	cout<<rollno<<setw(6)<<" "<<name<<setw(10)<<p<<setw(4)<<c<<setw(4)<<math<<setw(4)
+		<<eco<<setw(4)<<cse<<setw(4)<<total<<setw(8)<<per<<setw(6)<<grade<<endl;
 }
 
 int  student::retrollno() const
